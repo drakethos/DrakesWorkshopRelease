@@ -1,24 +1,24 @@
-﻿# Drake's Workshop â€” public releases
+﻿# Drake's Workshop - public releases
 
-Beta builds for **Drake's Workshop** (Drakethos Games). Downloads are **license-gated**: you need a beta access key (`DWK-â€¦`) from us to run the app.
+Alpha/beta builds for **Drake's Workshop** (Drakethos Games). Downloads are **license-gated**: you need a beta access key (`DWK-...`) from us to run the app.
 
 ## Status
 
-**Staged:** 0.1.0 locally (not published). Pipeline ready - run `tools\publish-release.cmd 0.1.0 --publish` from the private game repo when you want the GitHub Release.
+**Staged:** 0.1.0a locally (not published). Pipeline ready - run `tools\publish-release.cmd 0.1.0a --publish` from the private game repo when you want the GitHub Release.
 
 ## Layout
 
 ```text
 releases/
-  latest.json                 â† pointer to current version
-  index.json                  â† all published versions
+  latest.json                 <- pointer to current version
+  index.json                  <- all published versions
   CHANGELOG.md
-  0.1.0/
+  0.1.0a/
     notes.md
     checksums.sha256
-    # zips are NOT in git â€” only on the GitHub Release:
-    #   DrakesWorkshop-0.1.0-Windows.zip   â† first-time install
-    #   DrakesWorkshop-0.1.0-Update.zip    â† small overwrite update
+    # zips are NOT in git - only on the GitHub Release:
+    #   DrakesWorkshop-0.1.0a-Windows.zip   <- first-time install
+    #   DrakesWorkshop-0.1.0a-Update.zip    <- small overwrite update
 ```
 
 GitHub Actions (`verify-release-assets.yml`) fails a release if either zip is missing or notes omit the `DWK-` license requirement.
@@ -43,13 +43,13 @@ Updates are small (~8 MB); the full zip is mostly the engine + .NET runtime (~80
 
 ## Source
 
-Game source is private. This repo is **binaries (via Releases) + release notes only** â€” no source tree.
+Game source is private. This repo is **binaries (via Releases) + release notes only** - no source tree.
 
 ## Maintainers
 
 | Step | Where |
 |------|--------|
 | Build zips | Private repo: `tools\package-friend-build.cmd` |
-| Stage / publish | Private repo: `tools\publish-release.cmd <ver> [--publish]` |
+| Stage / publish | Private repo: `tools\publish-release.cmd 0.1.0a [--publish]` |
 | Architecture | Private repo: `docs/RELEASING.md` |
 

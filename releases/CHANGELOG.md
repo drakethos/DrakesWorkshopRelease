@@ -1,12 +1,12 @@
-# Drake's Workshop — release changelog
+# Drake's Workshop - release changelog
 
 ## Unreleased
 
 -
 
-## 0.1.0 — 2026-07-17
+## 0.1.0a - (pending publish)
 
 ### Added
-- Public beta drop (license-gated, `DWK-` keys)
+- First public **alpha** drop (license-gated, `DWK-` keys)
 - Full install + update zip release assets
-- Dual-repo publish pipeline (private source → public Releases)
+- Dual-repo publish pipeline (private source -> public Releases)
