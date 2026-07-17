@@ -4,8 +4,8 @@
                      {
                          "version":  "0.1.0a",
                          "tag":  "v0.1.0a",
-                         "releasedAtUtc":  "2026-07-17T21:08:32Z",
-                         "status":  "staged",
+                         "releasedAtUtc":  "2026-07-17T21:13:12Z",
+                         "status":  "published",
                          "channel":  "beta",
                          "product":  "drakes-workshop",
                          "licenseRequired":  true,

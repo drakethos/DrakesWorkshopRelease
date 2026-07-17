@@ -1,10 +1,10 @@
 ﻿{
     "product":  "drakes-workshop",
-    "status":  "staged",
-    "message":  "Staged locally - not on GitHub Releases yet. Run publish-release.cmd with --publish when ready.",
+    "status":  "current",
+    "message":  null,
     "version":  "0.1.0a",
     "tag":  "v0.1.0a",
-    "releasedAtUtc":  "2026-07-17T21:08:32Z",
+    "releasedAtUtc":  "2026-07-17T21:13:12Z",
     "channel":  "beta",
     "licenseRequired":  true,
     "licensePrefix":  "DWK-",

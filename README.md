@@ -4,7 +4,7 @@ Alpha/beta builds for **Drake's Workshop** (Drakethos Games). Downloads are **li
 
 ## Status
 
-**Staged:** 0.1.0a locally (not published). Pipeline ready - run `tools\publish-release.cmd 0.1.0a --publish` from the private game repo when you want the GitHub Release.
+**Current:** [v0.1.0a](https://github.com/drakethos/DrakesWorkshopRelease/releases/tag/v0.1.0a) - license-gated beta (`DWK-` keys).
 
 ## Layout
 
@@ -52,4 +52,5 @@ Game source is private. This repo is **binaries (via Releases) + release notes o
 | Build zips | Private repo: `tools\package-friend-build.cmd` |
 | Stage / publish | Private repo: `tools\publish-release.cmd 0.1.0a [--publish]` |
 | Architecture | Private repo: `docs/RELEASING.md` |
+
 
