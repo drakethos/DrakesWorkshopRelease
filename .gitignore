@@ -1,17 +1,10 @@
-# Godot 4+ specific ignores
-.godot/
-.nomedia
+# Large binaries are published via GitHub Releases, not committed.
+releases/**/*.zip
 
-# Godot-specific ignores
-.import/
-export.cfg
-export_credentials.cfg
 *.tmp
+*.log
+.DS_Store
+Thumbs.db
 
-# Imported translations (automatically generated from CSV files)
-*.translation
-
-# Mono-specific ignores
-.mono/
-data_*/
-mono_crash.*.json
+# Optional local unpack for smoke tests
+_unpacked/

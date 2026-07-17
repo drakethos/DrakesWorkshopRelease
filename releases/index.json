@@ -1,0 +1,28 @@
+﻿{
+    "product":  "drakes-workshop",
+    "versions":  [
+                     {
+                         "version":  "0.1.0",
+                         "tag":  "v0.1.0",
+                         "releasedAtUtc":  "2026-07-17T20:26:30Z",
+                         "status":  "staged",
+                         "channel":  "beta",
+                         "product":  "drakes-workshop",
+                         "licenseRequired":  true,
+                         "licensePrefix":  "DWK-",
+                         "fullZip":  "releases/0.1.0/DrakesWorkshop-0.1.0-Windows.zip",
+                         "updateZip":  "releases/0.1.0/DrakesWorkshop-0.1.0-Update.zip",
+                         "fullSha256":  "ffcb420c2d9d17ae91c594e8a9456582ecc80bc97bf452fc6868066d1f6e6711",
+                         "updateSha256":  "64c617a3fde71c2194c64b006c9b31c0156980cb1676506aaaf304511397efb6",
+                         "fullBytes":  80864224,
+                         "updateBytes":  8099284,
+                         "notes":  "releases/0.1.0/notes.md",
+                         "githubRelease":  "https://github.com/drakethos/DrakesWorkshopRelease/releases/tag/v0.1.0",
+                         "recoverUrl":  "https://api.hauskode.com/recover",
+                         "assets":  [
+                                        "DrakesWorkshop-0.1.0-Windows.zip",
+                                        "DrakesWorkshop-0.1.0-Update.zip"
+                                    ]
+                     }
+                 ]
+}

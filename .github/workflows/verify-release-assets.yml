@@ -1,0 +1,81 @@
+# Ensures every public GitHub Release ships BOTH zip assets and documents the DWK- gate.
+# No source code belongs in this repository — binaries are Release assets only.
+name: Verify release assets
+
+on:
+  release:
+    types: [published, edited]
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: Tag to verify (e.g. v0.1.0). Empty = latest release.
+        required: false
+        type: string
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    name: Install + update zips + license notes
+    runs-on: ubuntu-latest
+    steps:
+      - name: Resolve tag
+        id: tag
+        env:
+          GH_TOKEN: ${{ github.token }}
+          INPUT_TAG: ${{ inputs.tag }}
+          EVENT_TAG: ${{ github.event.release.tag_name }}
+        run: |
+          set -euo pipefail
+          TAG="${INPUT_TAG:-}"
+          if [ -z "$TAG" ]; then TAG="${EVENT_TAG:-}"; fi
+          if [ -z "$TAG" ]; then
+            TAG=$(gh release view --repo "${{ github.repository }}" --json tagName -q .tagName)
+          fi
+          echo "tag=$TAG" >> "$GITHUB_OUTPUT"
+          echo "Verifying $TAG"
+
+      - name: Require both zip assets + DWK license notes
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: ${{ steps.tag.outputs.tag }}
+        run: |
+          set -euo pipefail
+          REPO="${{ github.repository }}"
+          # Strip leading v for filename version
+          VER="${TAG#v}"
+          FULL="DrakesWorkshop-${VER}-Windows.zip"
+          UPDATE="DrakesWorkshop-${VER}-Update.zip"
+
+          mapfile -t ASSETS < <(gh api "repos/${REPO}/releases/tags/${TAG}" --jq '.assets[].name')
+          printf 'Assets:\n'
+          printf '  %s\n' "${ASSETS[@]}"
+
+          has_full=0
+          has_update=0
+          for a in "${ASSETS[@]}"; do
+            [ "$a" = "$FULL" ] && has_full=1
+            [ "$a" = "$UPDATE" ] && has_update=1
+          done
+
+          if [ "$has_full" -ne 1 ]; then
+            echo "::error::Missing first-time install asset: $FULL"
+            exit 1
+          fi
+          if [ "$has_update" -ne 1 ]; then
+            echo "::error::Missing update asset: $UPDATE"
+            exit 1
+          fi
+
+          BODY=$(gh api "repos/${REPO}/releases/tags/${TAG}" --jq .body)
+          echo "$BODY" | grep -qi 'DWK-' || {
+            echo "::error::Release notes must mention DWK- license keys"
+            exit 1
+          }
+          echo "$BODY" | grep -qi 'license' || {
+            echo "::error::Release notes must mention the license gate"
+            exit 1
+          }
+
+          echo "OK — $FULL + $UPDATE present; license gate documented."
