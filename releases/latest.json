@@ -2,21 +2,21 @@
     "product":  "drakes-workshop",
     "status":  "current",
     "message":  null,
-    "version":  "0.1.1",
-    "tag":  "v0.1.1",
-    "releasedAtUtc":  "2026-07-18T01:13:28Z",
+    "version":  "0.2.0",
+    "tag":  "v0.2.0",
+    "releasedAtUtc":  "2026-07-18T02:35:48Z",
     "channel":  "beta",
     "licenseRequired":  true,
     "licensePrefix":  "DWK-",
-    "fullZip":  "releases/0.1.1/DrakesWorkshop-0.1.1-Windows.zip",
-    "updateZip":  "releases/0.1.1/DrakesWorkshop-0.1.1-Update.zip",
-    "fullSha256":  "d04c6ff8aaa2c6fa6e28bcaa1af4abea8014319f2c742442b02ae13e757825ae",
-    "updateSha256":  "7acd851ef47e0d20e10ed845da4b628bc38ba046f697cb93243a0734091e8fa0",
+    "fullZip":  "releases/0.2.0/DrakesWorkshop-0.2.0-Windows.zip",
+    "updateZip":  "releases/0.2.0/DrakesWorkshop-0.2.0-Update.zip",
+    "fullSha256":  "6b47f3702091727a7a73d2b7389bb4bc36418a9a24d99c696f159d827200bb65",
+    "updateSha256":  "e633e39cd453d02a17a04a37de3647fc6e4a83e5e263af3be63023205b34f828",
     "assets":  [
-                   "DrakesWorkshop-0.1.1-Windows.zip",
-                   "DrakesWorkshop-0.1.1-Update.zip"
+                   "DrakesWorkshop-0.2.0-Windows.zip",
+                   "DrakesWorkshop-0.2.0-Update.zip"
                ],
-    "notes":  "releases/0.1.1/notes.md",
-    "githubRelease":  "https://github.com/drakethos/DrakesWorkshopRelease/releases/tag/v0.1.1",
+    "notes":  "releases/0.2.0/notes.md",
+    "githubRelease":  "https://github.com/drakethos/DrakesWorkshopRelease/releases/tag/v0.2.0",
     "recoverUrl":  "https://api.hauskode.com/recover"
 }
