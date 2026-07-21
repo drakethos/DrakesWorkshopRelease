@@ -4,6 +4,13 @@
 
 -
 
+## 0.2.3 - 2026-07-21
+
+### Added
+- Public beta drop (license-gated, `DWK-` keys)
+- Full install: `DrakesWorkshop-0.2.3-Windows.zip` (89.6 MB)
+- Update pack: `DrakesWorkshop-0.2.3-Update.zip` (20.2 MB)
+
 ## 0.2.0 - 2026-07-18
 
 ### Added
@@ -24,5 +31,6 @@
 - First public **alpha** drop (license-gated, `DWK-` keys)
 - Full install + update zip release assets
 - Dual-repo publish pipeline (private source -> public Releases)
+
 
 
