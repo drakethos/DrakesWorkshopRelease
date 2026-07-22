@@ -2,6 +2,35 @@
     "product":  "drakes-workshop",
     "versions":  [
                      {
+                         "version":  "0.2.5",
+                         "tag":  "v0.2.5",
+                         "releasedAtUtc":  "2026-07-22T14:14:44Z",
+                         "status":  "published",
+                         "channel":  "beta",
+                         "product":  "drakes-workshop",
+                         "licenseRequired":  true,
+                         "licensePrefix":  "DWK-",
+                         "installer":  "releases/0.2.5/DrakesWorkshop-win-Setup.exe",
+                         "fullZip":  "releases/0.2.5/DrakesWorkshop-0.2.5-Windows.zip",
+                         "updateZip":  "releases/0.2.5/DrakesWorkshop-0.2.5-Update.zip",
+                         "installerSha256":  "e6bd7591fb4e687b99459a6470b696317118ebc19214bac0f0d4393dd7a0fe24",
+                         "fullSha256":  "a4fcc93a521446a0718322991791370fbf7c82ffe42d93f1346275e04d6540ac",
+                         "updateSha256":  "ea34932fe93ab79f9aee4c8267d8160c64630aa05797821af3e01cd839f38cb0",
+                         "installerBytes":  94827360,
+                         "fullBytes":  86067965,
+                         "updateBytes":  13122536,
+                         "notes":  "releases/0.2.5/notes.md",
+                         "githubRelease":  "https://github.com/drakethos/DrakesWorkshopRelease/releases/tag/v0.2.5",
+                         "recoverUrl":  "https://api.hauskode.com/recover",
+                         "updateSource":  "velopack",
+                         "velopackUrl":  "https://api.hauskode.com/downloads/drakes-workshop/",
+                         "assets":  [
+                                        "DrakesWorkshop-win-Setup.exe",
+                                        "DrakesWorkshop-0.2.5-Windows.zip",
+                                        "DrakesWorkshop-0.2.5-Update.zip"
+                                    ]
+                     },
+                     {
                          "version":  "0.2.4",
                          "tag":  "v0.2.4",
                          "releasedAtUtc":  "2026-07-22T02:59:05Z",

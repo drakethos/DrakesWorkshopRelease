@@ -4,7 +4,7 @@ Alpha/beta builds for **Drake's Workshop** (Drakethos Games). Downloads are **li
 
 ## Status
 
-**Current:** [v0.2.4](https://github.com/drakethos/DrakesWorkshopRelease/releases/tag/v0.2.4) - license-gated beta (`DWK-` keys). Prefer the Velopack Setup.exe; portable zips still attached.
+**Current:** [v0.2.5](https://github.com/drakethos/DrakesWorkshopRelease/releases/tag/v0.2.5) - license-gated beta (`DWK-` keys). Prefer the Velopack Setup.exe; portable zips still attached.
 
 ## Layout
 
@@ -52,6 +52,7 @@ Game source is private. This repo is **binaries (via Releases) + release notes o
 | Build zips | Private repo: `tools\package-friend-build.cmd` |
 | Stage / publish | Private repo: `tools\publish-release.cmd 0.1.0a [--publish]` |
 | Architecture | Private repo: `docs/RELEASING.md` |
+
 
 
 
