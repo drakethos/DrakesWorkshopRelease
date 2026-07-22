@@ -4,6 +4,14 @@
 
 -
 
+## 0.2.4 - 2026-07-22
+
+### Added
+- Public beta drop (license-gated, `DWK-` keys)
+- Velopack installer: `DrakesWorkshop-win-Setup.exe` (99.5 MB)
+- Full portable: `DrakesWorkshop-0.2.4-Windows.zip` (91.1 MB)
+- Update pack: `DrakesWorkshop-0.2.4-Update.zip` (21.5 MB)
+
 ## 0.2.3 - 2026-07-21
 
 ### Added
@@ -31,6 +39,7 @@
 - First public **alpha** drop (license-gated, `DWK-` keys)
 - Full install + update zip release assets
 - Dual-repo publish pipeline (private source -> public Releases)
+
 
 
 
