@@ -1,0 +1,22 @@
+﻿# Drake's Workshop - LLM context
+
+> Public creator docs for **runtime Lua** (systems, libs, host whitelist). Do not invent C# gameplay APIs. Game source is private; this repo hosts markdown only.
+
+## Primary handoff (paste or fetch)
+
+- https://raw.githubusercontent.com/drakethos/DrakesWorkshopRelease/main/docs/lua-api/AI-CONTEXT.md - full constraints + API cheat sheets + boot order
+
+## Human / browsable docs
+
+- https://github.com/drakethos/DrakesWorkshopRelease/blob/main/docs/lua-api/README.md - index
+- https://raw.githubusercontent.com/drakethos/DrakesWorkshopRelease/main/docs/lua-api/constraints.md - creator rules
+- https://raw.githubusercontent.com/drakethos/DrakesWorkshopRelease/main/docs/lua-api/host-api.md - host whitelist
+- https://github.com/drakethos/DrakesWorkshopRelease/blob/main/docs/lua-api/libs/ - helper libraries
+- https://github.com/drakethos/DrakesWorkshopRelease/blob/main/docs/lua-api/systems/ - systems packs
+- https://raw.githubusercontent.com/drakethos/DrakesWorkshopRelease/main/docs/lua-api/examples/triple-jump-pete.md - worked example
+
+## Optional prompt stub
+
+```
+Fetch https://raw.githubusercontent.com/drakethos/DrakesWorkshopRelease/main/docs/lua-api/AI-CONTEXT.md (Drake's Workshop Lua). Then help me write Lua for:
+```
