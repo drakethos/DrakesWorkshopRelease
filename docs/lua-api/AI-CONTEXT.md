@@ -40,6 +40,8 @@ Paste this file into ChatGPT / Claude / Cursor (or fetch via `llms.txt`) before 
 
 **Entity:** `CharacterMove` - Character controller move: hx, hz horizontal, jumpY impulse. | `DeleteEntity` - Remove an entity. | `GetEntityMaterialStyle` - Get material style id. | `GetEntityMeta` - Read a string meta key. | `GetEntityPackItem` - Pack item id for this entity, if any. | `GetEntityPhysics` - Get physics mode string. | `GetEntityPos` - Return x, y, z position. | `GetEntityRot` - Return euler rotation degrees X,Y,Z. | `GetEntityScale` - Return scale x,y,z. | `GetEntitySizeFactor` - Relative character height factor (grow / scale). | `HasEntity` - True if an entity id exists. | `IsOnFloor` - True when the character is on the floor. | `JumpAll` - Apply jump impulse to all characters. | `ListEntities` - Return all entity ids. | `MoveEntity` - Set world position (x, y, z). | `OffsetEntity` - Nudge position; keeps character velocity. | `RenameEntity` - Rename an entity id. | `SetEntityAlbedoTexture` - Set albedo texture path/id. | `SetEntityColor` - Set albedo RGB 0-1. | `SetEntityMaterialStyle` - Set material style id. | `SetEntityMeta` - Write a string meta key. | `SetEntityMetallic` - Set material metallic. | `SetEntityModel` - Swap the visual model / pack mesh. | `SetEntityPhysics` - Set physics mode string. | `SetEntityRot` - Set euler rotation degrees X,Y,Z. | `SetEntityRoughness` - Set material roughness. | `SetEntityScale` - Set scale x,y,z. | `SetEntityTextureScale` - Set albedo texture scale. | `SetEntityVisible` - Show or hide an entity. | `SpawnEntity` - Spawn a named entity at x,y,z. | `SpawnPackEntity` - Spawn a pack item as an entity.
 
+**FX:** `AttachFx` - Attach looping particle FX to an entity so it follows (e.g. fireball). | `ClearEntityFx` - Stop and remove all FX attached to an entity. | `ClearFx` - Stop and remove an FX by id. | `ListFxPresets` - Built-in particle preset ids (fire, sparks, smoke). | `SpawnFx` - Spawn looping particle FX at world x,y,z (presets: fire, sparks, smoke).
+
 **Input:** `IsKeyDown` - True while a key is held (e.g. "w", "space"). | `IsMouseButtonDown` - True while a mouse button is held ("left"/"right").
 
 **Interact:** `GetInteractAmount` - Interact amount number. | `GetInteractArg` - Interact argument string. | `GetInteractKind` - Interact kind string. | `GetInteractOnce` - True if interact is one-shot. | `IsInteractable` - True if entity has interact enabled. | `SetInteractable` - Enable/disable interact on an entity.
@@ -353,7 +355,7 @@ Core Ã¢â‚¬â€ voice.lua (stub) Proximity / team / global voice. Captur
   - `GetVoiceMaxDistance()` - Voice max distance.
 
 ### `worldgen`
-Game Baseline â€” worldgen.lua Pushes SystemConfig into global SeedOptions for templates/worldgen.lua.
+Game Baseline â€” worldgen.lua Pushes SystemConfig into global SeedOptions for templates/worldgen.lua. Loads GenerateWorld from the helper template when this system is enabled (not via main.lua).
 - **SystemConfig:** (none)
 - **API:** (config only)
 <!-- END GENERATED -->

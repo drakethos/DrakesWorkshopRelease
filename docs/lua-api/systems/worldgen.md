@@ -7,7 +7,7 @@ Enable via Editor **Systems** tab or `systems.json`.
 <!-- BEGIN GENERATED -->
 Source: `shared/lua/systems/worldgen.lua`
 
-Game Baseline â€” worldgen.lua Pushes SystemConfig into global SeedOptions for templates/worldgen.lua.
+Game Baseline â€” worldgen.lua Pushes SystemConfig into global SeedOptions for templates/worldgen.lua. Loads GenerateWorld from the helper template when this system is enabled (not via main.lua).
 
 ### SystemConfig
 

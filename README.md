@@ -4,7 +4,7 @@ Alpha/beta builds for **Drake's Workshop** (Drakethos Games). Downloads are **li
 
 ## Status
 
-**Current:** [v0.2.13](https://github.com/drakethos/DrakesWorkshopRelease/releases/tag/v0.2.13) - license-gated beta (`DWK-` keys). Prefer the Velopack Setup.exe; portable zips still attached.
+**Current:** [v0.2.16](https://github.com/drakethos/DrakesWorkshopRelease/releases/tag/v0.2.16) - license-gated beta (`DWK-` keys). Prefer the Velopack Setup.exe; portable zips still attached.
 
 ## Creator Lua docs (AI / ChatGPT)
 
@@ -15,6 +15,7 @@ Public markdown only - mirrored on every `publish-release` stage. No game source
 | AI handoff (raw) | https://raw.githubusercontent.com/drakethos/DrakesWorkshopRelease/main/docs/lua-api/AI-CONTEXT.md |
 | LLM index (raw) | https://raw.githubusercontent.com/drakethos/DrakesWorkshopRelease/main/llms.txt |
 | Browse | https://github.com/drakethos/DrakesWorkshopRelease/blob/main/docs/lua-api/README.md |
+
 
 ## Layout
 
@@ -62,4 +63,5 @@ Game source is private. This repo ships **binaries (via Releases)**, release not
 | Build zips | Private repo: `tools\package-friend-build.cmd` |
 | Stage / publish | Private repo: `tools\publish-release.cmd 0.1.0a [--publish]` |
 | Architecture | Private repo: `docs/RELEASING.md` |
+
 

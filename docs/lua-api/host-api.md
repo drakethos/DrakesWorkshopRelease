@@ -103,6 +103,16 @@ MoonSharp globals bound by the runtime host. Always available in world scripts. 
 | `SpawnEntity` | Spawn a named entity at x,y,z. |
 | `SpawnPackEntity` | Spawn a pack item as an entity. |
 
+### FX
+
+| Function | Summary |
+|----------|---------|
+| `AttachFx` | Attach looping particle FX to an entity so it follows (e.g. fireball). |
+| `ClearEntityFx` | Stop and remove all FX attached to an entity. |
+| `ClearFx` | Stop and remove an FX by id. |
+| `ListFxPresets` | Built-in particle preset ids (fire, sparks, smoke). |
+| `SpawnFx` | Spawn looping particle FX at world x,y,z (presets: fire, sparks, smoke). |
+
 ### Input
 
 | Function | Summary |
