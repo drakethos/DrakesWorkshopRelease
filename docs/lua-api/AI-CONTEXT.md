@@ -8,7 +8,7 @@ Paste this file into ChatGPT / Claude / Cursor (or fetch via `llms.txt`) before 
 
 - Flat host globals + namespaced libs (`Game.Message`, `Basic.Jump`). Entity ids are **strings** from `GetLocalPlayer()`.
 - Display name = `GetLocalDisplayName()` (Main Menu character), not a `.Name` property.
-- Prefer `Include("name.lua")` for non-preloaded libs (`match_ui`, `match_end`, `input`). Preloaded: basic, animation, audio, sandbox, platform, game, condition.
+- Prefer `Include("name.lua")` for non-preloaded libs (`match_ui`, `match_end`, `input`, `water`, `lava`). Preloaded: basic, animation, audio, sandbox, platform, game, condition.
 - Systems are enabled in the Editor Systems tab / `systems.json`. Their public functions appear only when that pack is on.
 - World-unique logic belongs in map `scripts/`. Reusable helpers go in a lib or system.
 - `player_control` already binds WASD + Space jump. Multi-jump / custom move must cooperate (mid-air `CharacterMove(id, 0, 0, jumpY)`, or disable/override carefully) - do not blindly rebind Space.
@@ -50,7 +50,7 @@ Paste this file into ChatGPT / Claude / Cursor (or fetch via `llms.txt`) before 
 
 **Lobby:** `GetLobbyOption` - Lobby option by key (max_players, points_to_win, ...). | `GetLobbyPointsToWin` - Points to win from game.json. | `GetLobbyRounds` - Legacy alias for GetLobbyPointsToWin. | `GetMatchLobbySeats` - Match lobby roster after Host Start (or nil). | `GetPlayerSetupOption` - Player-setup option by key. | `GetPlayerSetupSeats` - Player-setup seat rows. | `GetPlayStyle` - "lobby" or "world" from game.json.
 
-**Other:** `ConsumeMatchIntroSkip` | `HideMatchIntro` | `SetMatchIntroText` | `ShowMatchIntro`
+**Other:** `ConsumeMatchIntroSkip` | `GetNetPlayerEntities` | `HideMatchIntro` | `SetGameCursor` | `SetMatchIntroText` | `ShowMatchIntro`
 
 **Packs:** `PackExists` - True if a pack id is available.
 
@@ -68,7 +68,7 @@ Paste this file into ChatGPT / Claude / Cursor (or fetch via `llms.txt`) before 
 
 **UI:** `ClearMatchScoreboard` - Hide the match scoreboard. | `CloseMenu` - Close the open menu panel. | `DisplayGameMessage` - Show a toast message (prefer Game.Message). | `GetInventorySlots` - Inventory slot layout bridge for HUD. | `SetGameMessageStyle` - Style game messages (anchor, color, duration). | `SetHotbarGrid` - Push hotbar grid + selected slot to HUD. | `SetHudText` - Set simple HUD text string. | `SetInventoryGrid` - Push inventory grid rows to HUD. | `SetMatchScoreboard` - Show top-right match scoreboard table. | `SetResourceHud` - Show resource strip at screen X,Y. | `ShowMatchEndDialog` - Center match-end dialog (win/lose). | `ShowMenu` - Open a simple titled menu panel. | `ShowResourceToast` - Brief resource gain toast.
 
-**Water:** `IsInDeepWater` - True in deep water swim zone (false while ignore-swim). | `IsInShallowWater` - True when wading in shallow water. | `IsInWater` - True when the entity is in water. | `IsOverDeepWater` - True when body is in deep water (ignores SetIgnoreSwim). | `IsWaterAt` - True when XZ is flooded. | `WaterSurfaceY` - Water surface Y at XZ, or nil if dry.
+**Water:** `GetFluidType` - Active fluid surface: water or lava (World tab Fluid). | `GetSeaLevel` - Advanced: absolute fluid plane Y. Prefer Water.getLevel / Lava.getLevel. | `IsInDeepWater` - True in deep water swim zone (false while ignore-swim). | `IsInLava` - True when Fluid=Lava and the entity is in the flooded surface. | `IsInShallowWater` - True when wading in shallow water. | `IsInWater` - True when the entity is in water. | `IsLavaAt` - True when Fluid=Lava and XZ is flooded. | `IsOverDeepWater` - True when body is in deep water (ignores SetIgnoreSwim). | `IsWaterAt` - True when XZ is flooded. | `SetSeaLevel` - Advanced: set absolute fluid plane Y (clamped). Prefer Water/Lava raiseLevel/lowerLevel. | `WaterSurfaceY` - Water surface Y at XZ, or nil if dry.
 
 **World:** `SaveWorldNow` - Force-save the current world package.
 
@@ -128,6 +128,14 @@ Paste this file into ChatGPT / Claude / Cursor (or fetch via `llms.txt`) before 
   `if Input.IsFrozen(me) then return end`
 - `Input.Unfreeze` - Restore character gameplay input for one entity, a list, or "all".
   `Input.Unfreeze("all")`
+- `Lava.getLevel` - Current fluid plane Y. Active only when World Fluid = Lava (shared sea_level plane).
+  `local y = Lava.getLevel()`
+- `Lava.lowerLevel` - Lower lava by amount (delta). Optional rate = units/sec; omit for instant. No-op unless Fluid = Lava.
+  `Lava.lowerLevel(5) -- or Lava.lowerLevel(5, 2)`
+- `Lava.raiseLevel` - Raise lava by amount (delta). Optional rate = units/sec; omit for instant. No-op unless Fluid = Lava.
+  `Lava.raiseLevel(5) -- or Lava.raiseLevel(5, 2)`
+- `Lava.riseEvery` - Every interval seconds, raise lava by amount (optional rate for animated rise). Floor-is-lava helper.
+  `Lava.riseEvery(30, 1.5, 0.5) -- every 30s raise 1.5 at 0.5 u/s`
 - `MatchEnd.Meets` - True when value meets target using op (>, >=, <, <=, ==).
   `MatchEnd.Meets(wins, 3, ">=")`
 - `MatchEnd.OnThreshold` - When value meets target, show the match-end dialog once and return true.
@@ -162,6 +170,12 @@ Paste this file into ChatGPT / Claude / Cursor (or fetch via `llms.txt`) before 
   `Sandbox.BreakApart("crate_1")`
 - `Sandbox.Respawn` - Respawn the local player at the spawn point (heals when Health is on).
   `Sandbox.Respawn()`
+- `Water.getLevel` - Current fluid plane Y. Active only when World Fluid = Water (shared sea_level plane).
+  `local y = Water.getLevel()`
+- `Water.lowerLevel` - Lower water by amount (delta). Optional rate = units/sec; omit for instant. No-op unless Fluid = Water.
+  `Water.lowerLevel(5) -- or Water.lowerLevel(5, 2)`
+- `Water.raiseLevel` - Raise water by amount (delta). Optional rate = units/sec; omit for instant. No-op unless Fluid = Water.
+  `Water.raiseLevel(5) -- or Water.raiseLevel(5, 2)`
 
 ## Systems cheat sheet
 
@@ -225,6 +239,12 @@ Sandbox Ã¢â‚¬â€ harvesting.lua Boots tree/chop harvest (axe Ã¢â€
 - **SystemConfig:** range, starter_axe
 - **API:** TryHarvestAttack
   - `TryHarvestAttack(range)` - Punch/chop nearest harvestable.
+
+### `hazard_fluid`
+Hazard fluid â€” damage while standing in a flooded surface of a chosen kind (lava by default). Requires Health (DamageEntity). World fluid type is set on World tab (Fluid = Lava / Water). Enable this pack when the map should burn / hurt on enter+stay; visuals are separate.
+- **SystemConfig:** damage, deep_only, fluid, interval, message, message_cooldown
+- **API:** IsHazardFluidActive
+  - `IsHazardFluidActive()` - True when world fluid matches this pack's fluid filter.
 
 ### `health`
 Game Baseline Ã¢â‚¬â€ health.lua (P1-27 Wave 2+) Per-player HP; void Y + landing impact; HUD styles; configurable On Death.

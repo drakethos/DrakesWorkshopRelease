@@ -158,7 +158,9 @@ MoonSharp globals bound by the runtime host. Always available in world scripts. 
 | Function | Summary |
 |----------|---------|
 | `ConsumeMatchIntroSkip` | _See LuaHost whitelist._ |
+| `GetNetPlayerEntities` | _See LuaHost whitelist._ |
 | `HideMatchIntro` | _See LuaHost whitelist._ |
+| `SetGameCursor` | _See LuaHost whitelist._ |
 | `SetMatchIntroText` | _See LuaHost whitelist._ |
 | `ShowMatchIntro` | _See LuaHost whitelist._ |
 
@@ -241,11 +243,16 @@ MoonSharp globals bound by the runtime host. Always available in world scripts. 
 
 | Function | Summary |
 |----------|---------|
+| `GetFluidType` | Active fluid surface: water or lava (World tab Fluid). |
+| `GetSeaLevel` | Advanced: absolute fluid plane Y. Prefer Water.getLevel / Lava.getLevel. |
 | `IsInDeepWater` | True in deep water swim zone (false while ignore-swim). |
+| `IsInLava` | True when Fluid=Lava and the entity is in the flooded surface. |
 | `IsInShallowWater` | True when wading in shallow water. |
 | `IsInWater` | True when the entity is in water. |
+| `IsLavaAt` | True when Fluid=Lava and XZ is flooded. |
 | `IsOverDeepWater` | True when body is in deep water (ignores SetIgnoreSwim). |
 | `IsWaterAt` | True when XZ is flooded. |
+| `SetSeaLevel` | Advanced: set absolute fluid plane Y (clamped). Prefer Water/Lava raiseLevel/lowerLevel. |
 | `WaterSurfaceY` | Water surface Y at XZ, or nil if dry. |
 
 ### World

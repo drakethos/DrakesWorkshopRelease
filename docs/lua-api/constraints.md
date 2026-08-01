@@ -17,7 +17,7 @@ Rules for world scripts, shipped libs/systems, and AI assistants.
 ## Includes and placement
 
 - Preloaded libs (always on): `basic`, `animation`, `audio`, `sandbox`, `platform`, `game`, `condition`.
-- Include-only: `match_ui`, `match_end`, `input` → `Include("match_ui.lua")` (etc.).
+- Include-only: `match_ui`, `match_end`, `input`, `water`, `lava` → `Include("water.lua")` (etc.).
 - Map override: `scripts/lib/<name>.lua` wins over shipped libs. Do not edit shipped core libs for one map.
 - Reusable logic → lib or system. Map-only logic → `scripts/<name>.lua`.
 

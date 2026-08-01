@@ -16,6 +16,7 @@ World-wide behavior packs under `shared/lua/systems/`. Public globals exist only
 | [communication](communication.md) | 2 | 5 |
 | [crafting](crafting.md) | 3 | 3 |
 | [harvesting](harvesting.md) | 1 | 2 |
+| [hazard_fluid](hazard_fluid.md) | 1 | 6 |
 | [health](health.md) | 8 | 16 |
 | [interact](interact.md) | 0 | 2 |
 | [inventory](inventory.md) | 16 | 2 |

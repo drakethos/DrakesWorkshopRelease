@@ -13,8 +13,10 @@ Shipped helper libs under `shared/lua/libs/`. Prefer these over re-implementing 
 | [condition](condition.md) | `Condition` | 6 | yes |
 | [game](game.md) | `Game` | 1 | yes |
 | [input](input.md) | `Input` | 3 | Include |
+| [lava](lava.md) | `Lava` | 4 | Include |
 | [match_end](match_end.md) | `MatchEnd` | 4 | Include |
 | [match_ui](match_ui.md) | `MatchUi` | 8 | Include |
 | [platform](platform.md) | `Platform` | 2 | yes |
 | [sandbox](sandbox.md) | `Sandbox` | 3 | yes |
+| [water](water.md) | `Water` | 3 | Include |
 <!-- END GENERATED -->
