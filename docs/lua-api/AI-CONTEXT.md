@@ -50,7 +50,7 @@ Paste this file into ChatGPT / Claude / Cursor (or fetch via `llms.txt`) before 
 
 **Lobby:** `GetLobbyOption` - Lobby option by key (max_players, points_to_win, ...). | `GetLobbyPointsToWin` - Points to win from game.json. | `GetLobbyRounds` - Legacy alias for GetLobbyPointsToWin. | `GetMatchLobbySeats` - Match lobby roster after Host Start (or nil). | `GetPlayerSetupOption` - Player-setup option by key. | `GetPlayerSetupSeats` - Player-setup seat rows. | `GetPlayStyle` - "lobby" or "world" from game.json.
 
-**Other:** `ConsumeMatchIntroSkip` | `GetNetPlayerEntities` | `HideMatchIntro` | `SetGameCursor` | `SetMatchIntroText` | `ShowMatchIntro`
+**Other:** `ConsumeMatchIntroSkip` | `GetNetPlayerEntities` | `HideMatchIntro` | `IsNetHost` | `SetGameCursor` | `SetMatchIntroText` | `ShowMatchIntro`
 
 **Packs:** `PackExists` - True if a pack id is available.
 

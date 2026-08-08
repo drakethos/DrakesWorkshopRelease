@@ -4,7 +4,7 @@ Alpha/beta builds for **Drake's Workshop** (Drakethos Games). Downloads are **li
 
 ## Status
 
-**Current:** [v0.2.22](https://github.com/drakethos/DrakesWorkshopRelease/releases/tag/v0.2.22) - license-gated beta (`DWK-` keys). Prefer the Velopack Setup.exe; portable zips still attached.
+**Current:** [v0.2.23](https://github.com/drakethos/DrakesWorkshopRelease/releases/tag/v0.2.23) - license-gated beta (`DWK-` keys). Prefer the Velopack Setup.exe; portable zips still attached.
 
 ## Creator Lua docs (AI / ChatGPT)
 
