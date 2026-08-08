@@ -7,13 +7,14 @@ Enable via Editor **Systems** tab or `systems.json`.
 <!-- BEGIN GENERATED -->
 Source: `shared/lua/systems/communication.lua`
 
-Core Ã¢â‚¬â€ communication.lua Game toasts / announcer presentation. Chat + voice nest as sub-modules.
+Core - communication.lua Game toasts / announcer presentation. Chat + voice nest as sub-modules.
 
 ### SystemConfig
 
 - `anchor`
 - `announcer_enabled`
 - `announcer_sfx`
+- `background`
 - `color`
 - `duration`
 

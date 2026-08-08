@@ -229,7 +229,7 @@ MoonSharp globals bound by the runtime host. Always available in world scripts. 
 | `CloseMenu` | Close the open menu panel. |
 | `DisplayGameMessage` | Show a toast message (prefer Game.Message). |
 | `GetInventorySlots` | Inventory slot layout bridge for HUD. |
-| `SetGameMessageStyle` | Style game messages (anchor, color, duration). |
+| `SetGameMessageStyle` | Style game messages (anchor, color, duration, background). |
 | `SetHotbarGrid` | Push hotbar grid + selected slot to HUD. |
 | `SetHudText` | Set simple HUD text string. |
 | `SetInventoryGrid` | Push inventory grid rows to HUD. |

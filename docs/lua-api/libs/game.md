@@ -11,5 +11,5 @@ Preloaded at boot - no `Include` required.
 
 | Symbol | Summary | Snippet |
 |--------|---------|---------|
-| `Game.Message` | Show a game message (toast). Audience: all, local, triggering, Player1, Player2. | `Game.Message("Hello!", "all")` |
+| `Game.Message` | Show a game message (word-art toast by default). Audience: all, local, triggering, Player1, Player2. | `Game.Message("Hello!", "all")` |
 <!-- END GENERATED -->

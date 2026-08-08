@@ -13,7 +13,7 @@ World-wide behavior packs under `shared/lua/systems/`. Public globals exist only
 | [chat](chat.md) | 4 | 5 |
 | [clock](clock.md) | 0 | 2 |
 | [combat](combat.md) | 3 | 6 |
-| [communication](communication.md) | 2 | 5 |
+| [communication](communication.md) | 2 | 6 |
 | [crafting](crafting.md) | 3 | 3 |
 | [harvesting](harvesting.md) | 1 | 2 |
 | [hazard_fluid](hazard_fluid.md) | 1 | 6 |
@@ -21,6 +21,7 @@ World-wide behavior packs under `shared/lua/systems/`. Public globals exist only
 | [interact](interact.md) | 0 | 2 |
 | [inventory](inventory.md) | 16 | 2 |
 | [menu](menu.md) | 5 | 1 |
+| [minimap](minimap.md) | 0 | 3 |
 | [mining](mining.md) | 3 | 3 |
 | [physics](physics.md) | 0 | 0 |
 | [player_control](player_control.md) | 0 | 12 |

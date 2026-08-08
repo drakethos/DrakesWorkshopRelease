@@ -11,7 +11,7 @@ Load with `Include("match_ui.lua")`.
 
 | Symbol | Summary | Snippet |
 |--------|---------|---------|
-| `MatchUi.Message` | Show a match message through the shared game-message API. | `MatchUi.Message("GO!", "all")` |
+| `MatchUi.Message` | Show a match message through the shared game-message API (word-art by default). | `MatchUi.Message("GO!", "all")` |
 | `MatchUi.IntroShow` | Top-of-screen how-to overlay with screen dim and optional host Skip. | `MatchUi.IntroShow("HOW TO PLAY", { skip_label = "SKIP INTRO", dim = 0.42 })` |
 | `MatchUi.IntroSet` | Update intro banner text (keeps dim / skip button). | `MatchUi.IntroSet("Click to punch!")` |
 | `MatchUi.IntroHide` | Hide the intro overlay. | `MatchUi.IntroHide()` |

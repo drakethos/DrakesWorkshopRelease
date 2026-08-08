@@ -66,7 +66,7 @@ Paste this file into ChatGPT / Claude / Cursor (or fetch via `llms.txt`) before 
 
 **Terrain:** `ApplySeedTerrain` - Apply seeded terrain from worldgen options. | `GetTerrainHeightAt` - Terrain height Y at XZ. | `GetWorldHalfExtents` - Playable map half-size X,Z.
 
-**UI:** `ClearMatchScoreboard` - Hide the match scoreboard. | `CloseMenu` - Close the open menu panel. | `DisplayGameMessage` - Show a toast message (prefer Game.Message). | `GetInventorySlots` - Inventory slot layout bridge for HUD. | `SetGameMessageStyle` - Style game messages (anchor, color, duration). | `SetHotbarGrid` - Push hotbar grid + selected slot to HUD. | `SetHudText` - Set simple HUD text string. | `SetInventoryGrid` - Push inventory grid rows to HUD. | `SetMatchScoreboard` - Show top-right match scoreboard table. | `SetResourceHud` - Show resource strip at screen X,Y. | `ShowMatchEndDialog` - Center match-end dialog (win/lose). | `ShowMenu` - Open a simple titled menu panel. | `ShowResourceToast` - Brief resource gain toast.
+**UI:** `ClearMatchScoreboard` - Hide the match scoreboard. | `CloseMenu` - Close the open menu panel. | `DisplayGameMessage` - Show a toast message (prefer Game.Message). | `GetInventorySlots` - Inventory slot layout bridge for HUD. | `SetGameMessageStyle` - Style game messages (anchor, color, duration, background). | `SetHotbarGrid` - Push hotbar grid + selected slot to HUD. | `SetHudText` - Set simple HUD text string. | `SetInventoryGrid` - Push inventory grid rows to HUD. | `SetMatchScoreboard` - Show top-right match scoreboard table. | `SetResourceHud` - Show resource strip at screen X,Y. | `ShowMatchEndDialog` - Center match-end dialog (win/lose). | `ShowMenu` - Open a simple titled menu panel. | `ShowResourceToast` - Brief resource gain toast.
 
 **Water:** `GetFluidType` - Active fluid surface: water or lava (World tab Fluid). | `GetSeaLevel` - Advanced: absolute fluid plane Y. Prefer Water.getLevel / Lava.getLevel. | `IsInDeepWater` - True in deep water swim zone (false while ignore-swim). | `IsInLava` - True when Fluid=Lava and the entity is in the flooded surface. | `IsInShallowWater` - True when wading in shallow water. | `IsInWater` - True when the entity is in water. | `IsLavaAt` - True when Fluid=Lava and XZ is flooded. | `IsOverDeepWater` - True when body is in deep water (ignores SetIgnoreSwim). | `IsWaterAt` - True when XZ is flooded. | `SetSeaLevel` - Advanced: set absolute fluid plane Y (clamped). Prefer Water/Lava raiseLevel/lowerLevel. | `WaterSurfaceY` - Water surface Y at XZ, or nil if dry.
 
@@ -120,7 +120,7 @@ Paste this file into ChatGPT / Claude / Cursor (or fetch via `llms.txt`) before 
   `Condition.InRegion(GetLocalPlayer(), "finish")`
 - `Condition.Within` - True if entityA is within distance units of entityB (e.g. stand near a chest).
   `Condition.Within(GetLocalPlayer(), "chest", 5)`
-- `Game.Message` - Show a game message (toast). Audience: all, local, triggering, Player1, Player2.
+- `Game.Message` - Show a game message (word-art toast by default). Audience: all, local, triggering, Player1, Player2.
   `Game.Message("Hello!", "all")`
 - `Input.Freeze` - Freeze character move/attack for one entity, a list, or "all". Does not block menu or pause.
   `Input.Freeze("all")`
@@ -154,7 +154,7 @@ Paste this file into ChatGPT / Claude / Cursor (or fetch via `llms.txt`) before 
   `MatchUi.IntroShow("HOW TO PLAY", { skip_label = "SKIP INTRO", dim = 0.42 })`
 - `MatchUi.IntroSkipped` - True once after the host presses Skip intro (consumes the flag).
   `if MatchUi.IntroSkipped() then begin_countdown() end`
-- `MatchUi.Message` - Show a match message through the shared game-message API.
+- `MatchUi.Message` - Show a match message through the shared game-message API (word-art by default).
   `MatchUi.Message("GO!", "all")`
 - `MatchUi.RobotSlots` - Show fixed robot color slots (filled or empty) before a lobby match starts.
   `MatchUi.RobotSlots("ROBOT SLOTS", slots, "Waiting for start")`
@@ -220,8 +220,8 @@ Game Baseline Ã¢â‚¬â€ combat.lua Left-click melee when a tool (sword)
   - `AttackAimTarget(damage)` - Melee the nearest aimed enemy.
 
 ### `communication`
-Core Ã¢â‚¬â€ communication.lua Game toasts / announcer presentation. Chat + voice nest as sub-modules.
-- **SystemConfig:** anchor, announcer_enabled, announcer_sfx, color, duration
+Core - communication.lua Game toasts / announcer presentation. Chat + voice nest as sub-modules.
+- **SystemConfig:** anchor, announcer_enabled, announcer_sfx, background, color, duration
 - **API:** GetGameMessageStyle, DisplayGameMessage
   - `GetGameMessageStyle()` - Current game message style table.
   - `DisplayGameMessage(text, audience)` - Show a toast (prefer Game.Message).
@@ -294,6 +294,11 @@ Game Baseline Ã¢â‚¬â€ menu.lua (P1-28 Wave 3) Basic in-game panels: S
   - `CloseMenu()` - Close the open menu.
   - `OpenInventoryMenu()` - Open inventory + resources sheet.
   - `ToggleInventoryMenu()` - Toggle inventory menu.
+
+### `minimap`
+Game Baseline â€” minimap.lua Core C# draws the HUD; this system gates enable + SystemConfig for layers/colors.
+- **SystemConfig:** allow_enlarged, shape, show_hud
+- **API:** (config only)
 
 ### `mining`
 Sandbox Ã¢â‚¬â€ mining.lua (stub) Digging ore / stone veins will live here. Placeholders so Gather tools can hook later.
