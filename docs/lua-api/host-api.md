@@ -161,6 +161,7 @@ MoonSharp globals bound by the runtime host. Always available in world scripts. 
 | `GetNetPlayerEntities` | _See LuaHost whitelist._ |
 | `HideMatchIntro` | _See LuaHost whitelist._ |
 | `IsNetHost` | _See LuaHost whitelist._ |
+| `SetEntityOpacity` | _See LuaHost whitelist._ |
 | `SetGameCursor` | _See LuaHost whitelist._ |
 | `SetMatchIntroText` | _See LuaHost whitelist._ |
 | `ShowMatchIntro` | _See LuaHost whitelist._ |
