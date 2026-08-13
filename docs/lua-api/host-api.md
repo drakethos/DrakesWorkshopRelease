@@ -29,6 +29,7 @@ MoonSharp globals bound by the runtime host. Always available in world scripts. 
 | Function | Summary |
 |----------|---------|
 | `ApplySystem` | Apply a systems pack by id (advanced; prefer Systems tab). |
+| `include` | Load a Lua lib/template/world script by name (deduped). |
 | `Include` | Load a Lua lib/template/world script by name (deduped). |
 | `Log` | Print a debug line to the game log. |
 
@@ -89,7 +90,7 @@ MoonSharp globals bound by the runtime host. Always available in world scripts. 
 | `OffsetEntity` | Nudge position; keeps character velocity. |
 | `RenameEntity` | Rename an entity id. |
 | `SetEntityAlbedoTexture` | Set albedo texture path/id. |
-| `SetEntityColor` | Set albedo RGB 0-1. |
+| `SetEntityColor` | Set albedo RGB 0-1. Key-compatible skins replace magenta/key pixels (luma-preserving); otherwise full-mesh tint. |
 | `SetEntityMaterialStyle` | Set material style id. |
 | `SetEntityMeta` | Write a string meta key. |
 | `SetEntityMetallic` | Set material metallic. |
