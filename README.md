@@ -17,7 +17,7 @@ Recover a lost key: https://api.hauskode.com/recover - Apply for Alpha: https://
 
 ## Status
 
-**Current:** [v0.2.26](https://github.com/drakethos/DrakesWorkshopRelease/releases/tag/v0.2.26)  -  Light (no key) + optional Alpha (`DWK-`). Prefer the Velopack Setup.exe; portable zips still attached.
+**Current:** [v0.2.27](https://github.com/drakethos/DrakesWorkshopRelease/releases/tag/v0.2.27)  -  Light (no key) + optional Alpha (`DWK-`). Download **Full Setup** (content included); auto-updates stay slim.
 
 
 ## Creator Lua docs (AI / ChatGPT)
@@ -40,18 +40,20 @@ releases/
   0.1.0a/
     notes.md
     checksums.sha256
-    # zips are NOT in git - only on the GitHub Release:
-    #   DrakesWorkshop-*-Windows.zip   <- first-time install
-    #   DrakesWorkshop-*-Update.zip    <- small overwrite update
+    # zips/installers are NOT in git - only on the GitHub Release:
+    #   DrakesWorkshop-*-Full-Setup.exe <- first-time install (content included)
+    #   DrakesWorkshop-*-Setup.exe      <- slim auto-update
+    #   DrakesWorkshop-*-Windows.zip
+    #   DrakesWorkshop-*-Update.zip
 ```
 
 GitHub Actions (`verify-release-assets.yml`) fails a release if either zip is missing or notes omit the optional `DWK-` Alpha upgrade.
 
 ## Install (preferred)
 
-1. Download **DrakesWorkshop-*-Setup.exe** from the [Releases](https://github.com/drakethos/DrakesWorkshopRelease/releases) page.
-2. Run the installer (Start Menu + Desktop shortcuts).
-3. Launch **Drake's Workshop**  -  play in **Light** (no key).
+1. Download **DrakesWorkshop-*-Full-Setup.msi** (Program Files) or **Full-Setup.exe** (per-user) from the [Releases](https://github.com/drakethos/DrakesWorkshopRelease/releases) page (or https://drakesworkshop.net/download).
+2. Run the installer. This build includes worlds, meshes, music, and skies â€” first launch installs that content, then the game starts.
+3. Launch **Drake's Workshop**  -  first run copies bundled content; later Core updates are small.
 4. Optional: **Unlock Alpha...** and enter a `DWK-` key for extra packs / Realistic terrain / more characters / upcoming hosting.
 5. Lost key? [Recover](https://api.hauskode.com/recover) with your email + 8-character code.
 
@@ -66,7 +68,7 @@ Requires the **.NET 8** runtime (Setup can install it).
 
 ## Updates
 
-**Velopack (Setup installs):** the launcher checks GitHub Releases on every start.
+**Velopack (Setup installs):** the launcher checks GitHub Releases on every start and downloads **slim Core only**. Missing or newer packs come from the content feed â€” not another full installer.
 
 **Portable:**
 
@@ -74,7 +76,7 @@ Requires the **.NET 8** runtime (Setup can install it).
 2. Unzip **into the same folder** (overwrite when asked).
 3. Leave `DrakesWorkshop.exe`, `DrakesWorkshopApp.exe`, and `data_ModuleGameWorkshop_*` alone.
 
-Updates are small (~8-12 MB); the full zip is mostly the engine + .NET runtime (~80 MB).
+Updates are small (~8-12 MB for portable; Velopack nupkg is slim Core). The first-install Full Setup is large because it embeds content.
 
 ## Source
 
