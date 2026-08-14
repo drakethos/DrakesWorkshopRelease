@@ -4,6 +4,15 @@
 
 -
 
+## 0.2.28 - 2026-08-14
+
+### Added
+- Public drop (Light no-key play; optional `DWK-` Alpha upgrade)
+- Full Setup (first install): `DrakesWorkshop-0.2.28-Full-Setup.msi` (1506.7 MB)
+- Slim Velopack (auto-update): `DrakesWorkshop-win-Setup.exe` (89.3 MB)
+- Slim portable: `DrakesWorkshop-0.2.28-Windows.zip` (80.7 MB)
+- Update pack: `DrakesWorkshop-0.2.28-Update.zip` (11 MB)
+
 ## 0.2.27 - 2026-08-14
 
 ### Added
@@ -200,6 +209,7 @@
 - First public **alpha** drop (license-gated, `DWK-` keys)
 - Full install + update zip release assets
 - Dual-repo publish pipeline (private source -> public Releases)
+
 
 
 
