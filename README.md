@@ -17,7 +17,7 @@ Recover a lost key: https://api.hauskode.com/recover - Apply for Alpha: https://
 
 ## Status
 
-**Current:** [v0.2.28](https://github.com/drakethos/DrakesWorkshopRelease/releases/tag/v0.2.28)  -  Light (no key) + optional Alpha (`DWK-`). Download **Full Setup** (content included); auto-updates stay slim.
+**Current:** [v0.2.29](https://github.com/drakethos/DrakesWorkshopRelease/releases/tag/v0.2.29)  -  Light (no key) + optional Alpha (`DWK-`). Download **Full Setup** (content included); auto-updates stay slim.
 
 
 ## Creator Lua docs (AI / ChatGPT)
