@@ -1,4 +1,4 @@
-# Ensures every public GitHub Release ships BOTH zip assets and documents the DWK- gate.
+# Ensures every public GitHub Release ships Full Setup + slim Velopack and documents the DWK- gate.
 # No source code belongs in this repository — binaries are Release assets only.
 name: Verify release assets
 
@@ -17,7 +17,7 @@ permissions:
 
 jobs:
   verify:
-    name: Install + update zips + license notes
+    name: Full Setup + slim Velopack + license notes
     runs-on: ubuntu-latest
     steps:
       - name: Resolve tag
@@ -36,35 +36,48 @@ jobs:
           echo "tag=$TAG" >> "$GITHUB_OUTPUT"
           echo "Verifying $TAG"
 
-      - name: Require both zip assets + DWK license notes
+      - name: Require Full Setup + slim feed + DWK license notes
         env:
           GH_TOKEN: ${{ github.token }}
           TAG: ${{ steps.tag.outputs.tag }}
         run: |
           set -euo pipefail
           REPO="${{ github.repository }}"
-          # Strip leading v for filename version
           VER="${TAG#v}"
-          FULL="DrakesWorkshop-${VER}-Windows.zip"
-          UPDATE="DrakesWorkshop-${VER}-Update.zip"
+          MSI="DrakesWorkshop-${VER}-Full-Setup.msi"
+          FULL_EXE="DrakesWorkshop-${VER}-Full-Setup.exe"
 
           mapfile -t ASSETS < <(gh api "repos/${REPO}/releases/tags/${TAG}" --jq '.assets[].name')
           printf 'Assets:\n'
           printf '  %s\n' "${ASSETS[@]}"
 
-          has_full=0
-          has_update=0
+          has_msi=0
+          has_full_exe=0
+          has_slim_setup=0
+          has_nupkg=0
+          has_releases_json=0
           for a in "${ASSETS[@]}"; do
-            [ "$a" = "$FULL" ] && has_full=1
-            [ "$a" = "$UPDATE" ] && has_update=1
+            [ "$a" = "$MSI" ] && has_msi=1
+            [ "$a" = "$FULL_EXE" ] && has_full_exe=1
+            [[ "$a" == *Setup.exe && "$a" != *Full-Setup.exe ]] && has_slim_setup=1
+            [[ "$a" == *.nupkg && "$a" == *-win* ]] && has_nupkg=1
+            [ "$a" = "releases.win.json" ] && has_releases_json=1
           done
 
-          if [ "$has_full" -ne 1 ]; then
-            echo "::error::Missing first-time install asset: $FULL"
+          if [ "$has_msi" -ne 1 ] && [ "$has_full_exe" -ne 1 ]; then
+            echo "::error::Missing Full Setup installer (need $MSI and/or $FULL_EXE)"
             exit 1
           fi
-          if [ "$has_update" -ne 1 ]; then
-            echo "::error::Missing update asset: $UPDATE"
+          if [ "$has_slim_setup" -ne 1 ]; then
+            echo "::error::Missing slim Velopack Setup.exe"
+            exit 1
+          fi
+          if [ "$has_nupkg" -ne 1 ]; then
+            echo "::error::Missing slim channel nupkg (*-win*.nupkg)"
+            exit 1
+          fi
+          if [ "$has_releases_json" -ne 1 ]; then
+            echo "::error::Missing releases.win.json"
             exit 1
           fi
 
@@ -78,4 +91,4 @@ jobs:
             exit 1
           }
 
-          echo "OK — $FULL + $UPDATE present; license gate documented."
+          echo "OK — Full Setup + slim Velopack present; license gate documented."
