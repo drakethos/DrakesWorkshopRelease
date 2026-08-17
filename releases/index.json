@@ -2,6 +2,38 @@
     "product":  "drakes-workshop",
     "versions":  [
                      {
+                         "version":  "0.2.31",
+                         "tag":  "v0.2.31",
+                         "releasedAtUtc":  "2026-08-17T23:57:08Z",
+                         "status":  "published",
+                         "channel":  "beta",
+                         "product":  "drakes-workshop",
+                         "licenseRequired":  true,
+                         "licensePrefix":  "DWK-",
+                         "installer":  "releases/0.2.31/DrakesWorkshop-0.2.31-Full-Setup.msi",
+                         "slimInstaller":  "releases/0.2.31/DrakesWorkshop-win-Setup.exe",
+                         "installerSha256":  "af149975fea06c17fca15e0b240faaee90c37857f10ee22f2810efdf2933e0b7",
+                         "slimInstallerSha256":  "4309ca6e9d5e8872d2c88e85bd13ea78a3ea7b08a0bba4d6d6980fbadf8d7543",
+                         "installerBytes":  104167356,
+                         "slimInstallerBytes":  93780016,
+                         "notes":  "releases/0.2.31/notes.md",
+                         "githubRelease":  "https://github.com/drakethos/DrakesWorkshopRelease/releases/tag/v0.2.31",
+                         "recoverUrl":  "https://api.hauskode.com/recover",
+                         "updateSource":  "velopack",
+                         "velopackUrl":  "https://github.com/drakethos/DrakesWorkshopRelease",
+                         "assets":  [
+                                        "DrakesWorkshop-0.2.31-Full-Setup.msi",
+                                        "DrakesWorkshop-0.2.31-Full-Setup.exe",
+                                        "DrakesWorkshop-win-Setup.exe"
+                                    ],
+                         "fullSetupMsi":  "releases/0.2.31/DrakesWorkshop-0.2.31-Full-Setup.msi",
+                         "fullSetupMsiSha256":  "af149975fea06c17fca15e0b240faaee90c37857f10ee22f2810efdf2933e0b7",
+                         "fullSetupMsiBytes":  104167356,
+                         "fullSetup":  "releases/0.2.31/DrakesWorkshop-0.2.31-Full-Setup.exe",
+                         "fullSetupSha256":  "911d70dbf4974b5cfdfdd66f8dc63d3cd6dd6fa62342580e673bdbb97aa9aff9",
+                         "fullSetupBytes":  120037294
+                     },
+                     {
                          "version":  "0.2.30",
                          "tag":  "v0.2.30",
                          "releasedAtUtc":  "2026-08-17T02:48:53Z",
