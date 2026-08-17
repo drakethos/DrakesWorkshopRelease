@@ -17,7 +17,7 @@ Recover a lost key: https://api.hauskode.com/recover - Apply for Alpha: https://
 
 ## Status
 
-**Current:** [v0.2.29](https://github.com/drakethos/DrakesWorkshopRelease/releases/tag/v0.2.29)  -  Light (no key) + optional Alpha (`DWK-`). Download **Full Setup** (content included); auto-updates stay slim.
+**Current:** [v0.2.30](https://github.com/drakethos/DrakesWorkshopRelease/releases/tag/v0.2.30)  -  Light (no key) + optional Alpha (`DWK-`). Download **Full Setup** (content included); auto-updates stay slim.
 
 
 ## Creator Lua docs (AI / ChatGPT)
@@ -41,13 +41,13 @@ releases/
     notes.md
     checksums.sha256
     # zips/installers are NOT in git - only on the GitHub Release:
-    #   DrakesWorkshop-*-Full-Setup.exe <- first-time install (content included)
+    #   DrakesWorkshop-*-Full-Setup.msi <- download page (Program Files)
+    #   DrakesWorkshop-*-Full-Setup.exe <- per-user Full Setup
     #   DrakesWorkshop-*-Setup.exe      <- slim auto-update
-    #   DrakesWorkshop-*-Windows.zip
-    #   DrakesWorkshop-*-Update.zip
+    #   slim *.nupkg / RELEASES / releases.win.json
 ```
 
-GitHub Actions (`verify-release-assets.yml`) fails a release if either zip is missing or notes omit the optional `DWK-` Alpha upgrade.
+GitHub Actions (`verify-release-assets.yml`) fails a release if Full Setup or the slim Velopack feed is missing, or notes omit the optional `DWK-` Alpha upgrade.
 
 ## Install (preferred)
 
@@ -59,24 +59,11 @@ GitHub Actions (`verify-release-assets.yml`) fails a release if either zip is mi
 
 Requires the **.NET 8** runtime (Setup can install it).
 
-## Portable (optional)
-
-1. Download **DrakesWorkshop-*-Windows.zip** from [Releases](https://github.com/drakethos/DrakesWorkshopRelease/releases).
-2. Unzip to a folder.
-3. Run `DrakesWorkshop.exe` (launcher)  -  Light needs no key.
-4. Optional: Unlock Alpha... with a `DWK-` key.
-
 ## Updates
 
 **Velopack (Setup installs):** the launcher checks GitHub Releases on every start and downloads **slim Core only**. Missing or newer packs come from the content feed â€” not another full installer.
 
-**Portable:**
-
-1. Download **DrakesWorkshop-*-Update.zip** for the new version.
-2. Unzip **into the same folder** (overwrite when asked).
-3. Leave `DrakesWorkshop.exe`, `DrakesWorkshopApp.exe`, and `data_ModuleGameWorkshop_*` alone.
-
-Updates are small (~8-12 MB for portable; Velopack nupkg is slim Core). The first-install Full Setup is large because it embeds content.
+Updates are small (Velopack nupkg is slim Core). The first-install Full Setup is large because it embeds Light essentials.
 
 ## Source
 
