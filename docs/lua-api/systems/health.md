@@ -7,7 +7,7 @@ Enable via Editor **Systems** tab or `systems.json`.
 <!-- BEGIN GENERATED -->
 Source: `shared/lua/systems/health.lua`
 
-Game Baseline Ã¢â‚¬â€ health.lua (P1-27 Wave 2+) Per-player HP; void Y + landing impact; HUD styles; configurable On Death.
+Game Baseline -- health.lua (P1-27 Wave 2+) Per-player HP; void Y + landing impact; HUD styles; configurable On Death.
 
 ### SystemConfig
 

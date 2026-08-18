@@ -7,7 +7,7 @@ Enable via Editor **Systems** tab or `systems.json`.
 <!-- BEGIN GENERATED -->
 Source: `shared/lua/systems/resources.lua`
 
-Game Baseline Ã¢â‚¬â€ resources.lua (P1-28 Wave 3+) Dynamic currency list from Systems Ã¢â€ â€™ Resources Ã¢â€ â€™ items[] (Unity-style array). Each item: { id, amount, color }. hud_anchor: free (xy) | ui_bar (RTS top bar) | inventory (Adventure bag/hotbar).
+Game Baseline -- resources.lua (P1-28 Wave 3+) Dynamic currency list from Systems -> Resources -> items[] (Unity-style array). Each item: { id, amount, color }. hud_anchor: free (xy) | ui_bar (RTS top bar) | inventory (Adventure bag/hotbar).
 
 ### SystemConfig
 

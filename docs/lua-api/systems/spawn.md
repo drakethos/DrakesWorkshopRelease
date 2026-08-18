@@ -7,7 +7,7 @@ Enable via Editor **Systems** tab or `systems.json`.
 <!-- BEGIN GENERATED -->
 Source: `shared/lua/systems/spawn.lua`
 
-Game Baseline â€” spawn.lua (P1-26 / P1-27 team filter) Place local player at per-player spawn, else team spawn, else global spawn_point. Feet are ground-snapped by the host (GetSpawnPosFor / GetSpawnPos).
+Game Baseline â€” spawn.lua (P1-26 / P1-27 team filter) Place local player at per-player spawn, else team spawn, else global spawn_point. Feet are ground-snapped by the host (GetSpawnPosFor / GetSpawnPos). Submerged pads/cells are rejected in favor of nearest dry walkable ground.
 
 ### SystemConfig
 

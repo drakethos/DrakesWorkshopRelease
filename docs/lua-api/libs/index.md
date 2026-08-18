@@ -17,6 +17,7 @@ Shipped helper libs under `shared/lua/libs/`. Prefer these over re-implementing 
 | [match_end](match_end.md) | `MatchEnd` | 4 | Include |
 | [match_ui](match_ui.md) | `MatchUi` | 8 | Include |
 | [platform](platform.md) | `Platform` | 2 | yes |
+| [safe_spawn](safe_spawn.md) | `SafeSpawn` | 7 | Include |
 | [sandbox](sandbox.md) | `Sandbox` | 3 | yes |
 | [water](water.md) | `Water` | 3 | Include |
 <!-- END GENERATED -->

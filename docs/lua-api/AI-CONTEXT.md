@@ -164,6 +164,20 @@ Paste this file into ChatGPT / Claude / Cursor (or fetch via `llms.txt`) before 
   `Platform.Bounce(GetLocalPlayer(), 8)`
 - `Platform.HazardKill` - Simple hazard: respawn the local player when they touch a tagged entity.
   `-- use with OnTick near-check in your script`
+- `SafeSpawn.Claim` - Mark XZ as taken so later DryStandingAt calls keep clear of it.
+  `SafeSpawn.Claim(claim, 4, 2)`
+- `SafeSpawn.DryStandingAt` - Standing pose at XZ, nudged to the nearest dry land when that cell is flooded.
+  `local x, y, z = SafeSpawn.DryStandingAt(4, 2)`
+- `SafeSpawn.FindNear` - Nearest dry walkable standing position around XZ.
+  `local x, y, z = SafeSpawn.FindNear(0, 0)`
+- `SafeSpawn.IsDry` - True when XZ is walkable land (not water/lava, terrain above sea).
+  `if SafeSpawn.IsDry(0, 0) then end`
+- `SafeSpawn.NewClaim` - Claim set so a multi-seat line-up never stacks two spawns on one dry cell.
+  `local claim = SafeSpawn.NewClaim()`
+- `SafeSpawn.PlaceLocalPlayer` - Put the local player on a dry spawn (marker or nearest land).
+  `SafeSpawn.PlaceLocalPlayer()`
+- `SafeSpawn.RelocateFloodedMarkers` - Move submerged spawn pads onto the nearest dry walkable ground.
+  `SafeSpawn.RelocateFloodedMarkers()`
 - `Sandbox.Attack` - Deal damage to the nearest enemy in front of the local player (left-click combat).
   `Sandbox.Attack()`
 - `Sandbox.BreakApart` - Break a marked breakable prop into rigid chunks.
@@ -247,7 +261,7 @@ Hazard fluid â€” damage while standing in a flooded surface of a chosen kin
   - `IsHazardFluidActive()` - True when world fluid matches this pack's fluid filter.
 
 ### `health`
-Game Baseline Ã¢â‚¬â€ health.lua (P1-27 Wave 2+) Per-player HP; void Y + landing impact; HUD styles; configurable On Death.
+Game Baseline -- health.lua (P1-27 Wave 2+) Per-player HP; void Y + landing impact; HUD styles; configurable On Death.
 - **SystemConfig:** consequence, consequence_amount, consequence_id, death_delay, death_script, fall_damage, fall_impact, fall_impact_max, fall_impact_min, fall_impact_mul, fall_y, hud_style, max_hp, on_death, show_hud, units_per_icon
 - **API:** OnDeath, SetHealthHudStyle, GetHealth, GetMaxHealth, IsDead, RespawnPlayer, DamageEntity, HealEntity
   - `OnDeath(fn)` - Register a death callback: OnDeath(function(playerId) end).
@@ -324,7 +338,7 @@ Game Baseline â€” player_management.lua (P1-26) Ensure the local player exi
 - **API:** (config only)
 
 ### `resources`
-Game Baseline Ã¢â‚¬â€ resources.lua (P1-28 Wave 3+) Dynamic currency list from Systems Ã¢â€ â€™ Resources Ã¢â€ â€™ items[] (Unity-style array). Each item: { id, amount, color }. hud_anchor: free (xy) | ui_bar (RTS top bar) | inventory (Adventure bag/hotbar).
+Game Baseline -- resources.lua (P1-28 Wave 3+) Dynamic currency list from Systems -> Resources -> items[] (Unity-style array). Each item: { id, amount, color }. hud_anchor: free (xy) | ui_bar (RTS top bar) | inventory (Adventure bag/hotbar).
 - **SystemConfig:** hud_anchor, hud_x, hud_y, items, show_hud
 - **API:** GetResource, SetResource, AddResource, ListResources, FormatResources
   - `GetResource(player, resource_id)` - Get a currency/resource amount.
@@ -352,7 +366,7 @@ Game Baseline â€” simple_ui.lua (P1-27 Wave 2) Welcome toast + periodic HUD
 - **API:** (config only)
 
 ### `spawn`
-Game Baseline â€” spawn.lua (P1-26 / P1-27 team filter) Place local player at per-player spawn, else team spawn, else global spawn_point. Feet are ground-snapped by the host (GetSpawnPosFor / GetSpawnPos).
+Game Baseline â€” spawn.lua (P1-26 / P1-27 team filter) Place local player at per-player spawn, else team spawn, else global spawn_point. Feet are ground-snapped by the host (GetSpawnPosFor / GetSpawnPos). Submerged pads/cells are rejected in favor of nearest dry walkable ground.
 - **SystemConfig:** (none)
 - **API:** (config only)
 
