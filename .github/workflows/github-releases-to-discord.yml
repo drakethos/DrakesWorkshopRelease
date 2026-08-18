@@ -31,7 +31,8 @@ jobs:
           webhook_url: ${{ secrets.WEBHOOK_URL }}
           color: "2105893"
           username: "Drake's Workshop"
-          content: "<@1214350479509823588> A new build is available!"
+          # Role pings need <@&id>. <@id> on a role snowflake renders as @Unknown User.
+          content: "<@&1214350479509823588> Build is ready. <@215235028488159232> get your ass to work"
           footer_title: "Changelog"
           footer_timestamp: true
           reduce_headings: true
